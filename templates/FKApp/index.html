@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>Movie List:</h1> <hr>
+{% for movie in movies %}
+<ul>
+       <li>Name:{{movie.name}}</li>
+       <li>Rating: <meter value="{{movie.starrating}}" min="0" max="5"></meter> {{movie.starrating}} out of 5</li>
+       <li>Decription:{{movie.description}}</li>
+       <li>Category:{{movie.category.name}}</li>
+       <!-- <li>Category:{{movie.category}}</li> -->
+</ul>
+<hr>
+{% endfor %}
+  </body>
+</html>

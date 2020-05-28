@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>Category List:</h1><hr>
+<a href="/insert">Create New Movie</a>
+
+
+{% for cat in categories %}
+    <h2>{{cat.name}}</h2>
+    {% for movie in cat.movie_set.all %}
+       <ul>
+         <li>Name:{{movie.name}}</li>
+         <li>Rating: <meter value="{{movie.starrating}}" min="0" max="5"></meter> {{movie.starrating}} out of 5</li>
+         <li>Decription:{{movie.description}}</li>
+       </ul>
+    {% endfor %}
+{% endfor %}
+  </body>
+</html>
